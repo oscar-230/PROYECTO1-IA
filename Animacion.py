@@ -5,7 +5,7 @@ from matplotlib.animation import FuncAnimation
 from matplotlib.colors import Normalize
 from Amplitud import busqueda_amplitud
 from main import leer_mundo
-#from Profundidad import busqueda_profundidad_evitando_ciclos    
+from Profundidad import busqueda_profundidad #from Profundidad import busqueda_profundidad_evitando_ciclos    
 from CostoUniforme import busqueda_costo_uniforme
 from Avara import busqueda_avara
 from A_star import busqueda_A_star
@@ -109,7 +109,7 @@ def main():
     print("\nSeleccione el algoritmo de búsqueda:")
     print("1. Búsqueda No Informada - Amplitud")
     print("2. Búsqueda No Informada - Costo Uniforme")
-    print("3. Búsqueda No Informada - Profundidad evitando ciclos (NO DISPONIBLE)")
+    print("3. Búsqueda No Informada - Profundidad evitando ciclos")
     print("4. Búsqueda Informada - Avara")
     print("5. Búsqueda Informada - A*")
     
@@ -135,15 +135,15 @@ def main():
             visualizar_resultado(mundo, camino, posicion_inicial, paquetes)
         else:
             print("No se encontró solución.")
-    # elif opcion == "3":
-    #     print("\nAplicando Búsqueda por Profundidad evitando Ciclos...")
-    #     camino, nodos_expandidos, profundidad, tiempo, costo = busqueda_profundidad_evitando_ciclos(mundo, posicion_inicial, paquetes)
-    #     if camino:
-    #         print("¡Solución encontrada!")
-    #         mostrar_reporte(camino, nodos_expandidos, profundidad, tiempo, costo)
-    #         visualizar_resultado(mundo, camino, posicion_inicial, paquetes)
-    #     else:
-    #         print("No se encontró solución.")
+    elif opcion == "3":
+        print("\nAplicando Búsqueda por Profundidad evitando Ciclos...")
+        camino, nodos_expandidos, profundidad, tiempo, costo = busqueda_profundidad(mundo, posicion_inicial, paquetes)
+        if camino:
+             print("¡Solución encontrada!")
+             mostrar_reporte(camino, nodos_expandidos, profundidad, tiempo, costo)
+             visualizar_resultado(mundo, camino, posicion_inicial, paquetes)
+        else:
+             print("No se encontró solución.")
     elif opcion == "4":
         print("\nAplicando Búsqueda Avara...")
         camino, nodos_expandidos, profundidad, tiempo, costo = busqueda_avara(mundo, posicion_inicial, paquetes)
