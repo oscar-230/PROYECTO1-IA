@@ -35,12 +35,28 @@ def mostrar_reporte(Camino, nodos_expandidos, profundidad, tiempo, costo):
     print("-----------------------------\n")
 
 def mostrar_reporte_gui(nodos_expandidos, profundidad, tiempo, costo=None):
-    mensaje = f"Nodos expandidos: {nodos_expandidos}\n"
-    mensaje += f"Profundidad del árbol: {profundidad}\n"
-    mensaje += f"Tiempo de cómputo: {tiempo:.4f} segundos\n"
+    ventana = tk.Toplevel()
+    ventana.title("Reporte de Búsqueda")
+    ventana.geometry("400x300")
+    ventana.configure(bg="#2b2b2b")
+    ventana.resizable(False, False)
+
+    marco = tk.Frame(ventana, bg="#3c3f41", bd=2, relief="groove", padx=20, pady=20)
+    marco.place(relx=0.5, rely=0.5, anchor="center")
+
+    tk.Label(marco, text="📊 Reporte de Búsqueda", font=("Helvetica", 14, "bold"),
+             bg="#3c3f41", fg="white").pack(pady=(0, 15))
+
+    fila = lambda texto: tk.Label(marco, text=texto, font=("Helvetica", 12), bg="#3c3f41", fg="white", anchor="w")
+    
+    fila(f"Nodos expandidos: {nodos_expandidos}").pack(anchor="w", pady=3)
+    fila(f"Profundidad del árbol: {profundidad}").pack(anchor="w", pady=3)
+    fila(f"Tiempo de cómputo: {tiempo:.4f} segundos").pack(anchor="w", pady=3)
     if costo is not None:
-        mensaje += f"Costo de la solución: {costo}\n"
-    messagebox.showinfo("Reporte de la Búsqueda", mensaje)
+        fila(f"Costo de la solución: {costo}").pack(anchor="w", pady=3)
+
+    ttk.Button(marco, text="Cerrar", command=ventana.destroy).pack(pady=15)
+
 
 cesped_img = Image.open("./assets/cesped.png")
 drone_img = Image.open("./assets/drone.png")
