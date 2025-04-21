@@ -1,3 +1,7 @@
+#Oscar David Cuaical López - 2270657
+#Javier Andres Lasso Rojas - 2061149
+#Juan Esteban Guerrero - 2040798
+
 import time
 from main import EstadoDron, obtener_acciones_posibles, aplicar_accion
 
@@ -9,6 +13,7 @@ def busqueda_profundidad(mundo, posicion_inicial, paquetes):
     visitados.add((estado_inicial.posicion, estado_inicial.paquetes_restantes))
     nodos_expandidos = 0
 
+    # Orden de los operadores (Derecha, Izquierda, Abajo, Arriba)
     while pila:
         estado_actual = pila.pop()
         nodos_expandidos += 1

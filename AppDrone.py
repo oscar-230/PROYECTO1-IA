@@ -1,3 +1,7 @@
+#Oscar David Cuaical López - 2270657
+#Javier Andres Lasso Rojas - 2061149
+#Juan Esteban Guerrero - 2040798
+
 import tkinter as tk
 from tkinter import ttk, messagebox
 import numpy as np
@@ -145,7 +149,7 @@ def visualizar_resultado(mundo, camino, posicion_inicial, paquetes_originales, c
     return ani
 
 def ejecutar_busqueda(tipo, nombre_algo):
-    ruta_archivo = './input/Prueba1.txt'
+    ruta_archivo = './input/Prueba2cl.txt'
     mundo, posicion_inicial, paquetes = leer_mundo(ruta_archivo)
 
     if mundo is None:

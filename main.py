@@ -1,5 +1,8 @@
-import numpy as np
+#Oscar David Cuaical López - 2270657
+#Javier Andres Lasso Rojas - 2061149
+#Juan Esteban Guerrero - 2040798
 
+import numpy as np
 
 class EstadoDron:
     def __init__(self, posicion, paquetes_restantes, camino=None, costo_total=0):
@@ -44,6 +47,7 @@ def leer_mundo(ruta_archivo):
         return None, None, None
     
 def obtener_acciones_posibles():
+    #(arriba, abajo, izquierda, derecha)
     return [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
 def es_movimiento_valido(mundo, posicion):

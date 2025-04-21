@@ -1,3 +1,7 @@
+#Oscar David Cuaical López - 2270657
+#Javier Andres Lasso Rojas - 2061149
+#Juan Esteban Guerrero - 2040798
+
 import time
 from collections import deque
 from main import EstadoDron, obtener_acciones_posibles, aplicar_accion
