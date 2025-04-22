@@ -149,7 +149,7 @@ def visualizar_resultado(mundo, camino, posicion_inicial, paquetes_originales, c
     return ani
 
 def ejecutar_busqueda(tipo, nombre_algo):
-    ruta_archivo = './input/Prueba2cl.txt'
+    ruta_archivo = './input/Prueba1.txt'
     mundo, posicion_inicial, paquetes = leer_mundo(ruta_archivo)
 
     if mundo is None:
